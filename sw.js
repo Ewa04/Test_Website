@@ -5,7 +5,8 @@ self.addEventListener("install", e => {
             return cache.addAll([
                 "./index.html",
                 "./manifest.json",
-                "./icons/logo192.png"
+                "./icons/logo192.png",
+                "./icons/logo512.png"
             ]);
         })
     );
