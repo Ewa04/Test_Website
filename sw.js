@@ -3,20 +3,20 @@ self.addEventListener("install", e => {
     e.waitUntil(
         caches.open("static").then(cache => {
             return cache.addAll([
-                "./",
-                ".manifest.json",
+                "./index.html",
+                "./manifest.json"
                 "./icons/logo192.png"
             ]);
         })
     );
     console.log("Resources in cache. Done");
-})
+});
 
 self.addEventListener("fetch", e => {
-    console.log('intercepting fecth request for:', e.request.url);
+    console.log("Intercepting fetch request for:", e.request.url);
     e.respondWith(
         caches.match(e.request).then(response => {
             return response || fetch(e.request);
         })
-    )
+    );
 });
