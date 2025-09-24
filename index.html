@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Raad het Getal Spel</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f0f0f0; text-align: center; margin-top: 50px; }
+        .game-container { background: #fff; padding: 30px; border-radius: 10px; display: inline-block; box-shadow: 0 0 10px #ccc; }
+        input[type="number"] { width: 50px; }
+        button { padding: 5px 15px; }
+        #result { margin-top: 15px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>Raad het Getal!</h1>
+        <p>Raad een getal tussen 1 en 10:</p>
+        <input type="number" id="guess" min="1" max="10">
+        <button onclick="checkGuess()">Raad!</button>
+        <div id="result"></div>
+        <button onclick="resetGame()" style="margin-top:10px;">Opnieuw spelen</button>
+    </div>
+    <script>
+        let secret = Math.floor(Math.random() * 10) + 1;
+        function checkGuess() {
+            const guess = Number(document.getElementById('guess').value);
+            const result = document.getElementById('result');
+            if (!guess || guess < 1 || guess > 10) {
+                result.textContent = "Voer een geldig getal in!";
+                result.style.color = "red";
+                return;
+            }
+            if (guess === secret) {
+                result.textContent = "Gefeliciteerd! Je hebt het juiste getal geraden!";
+                result.style.color = "green";
+            } else if (guess < secret) {
+                result.textContent = "Te laag! Probeer opnieuw.";
+                result.style.color = "orange";
+            } else {
+                result.textContent = "Te hoog! Probeer opnieuw.";
+                result.style.color = "orange";
+            }
+        }
+        function resetGame() {
+            secret = Math.floor(Math.random() * 10) + 1;
+            document.getElementById('guess').value = '';
+            document.getElementById('result').textContent = '';
+        }
+    </script>
+</body>
+</html>
