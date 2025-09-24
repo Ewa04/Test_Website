@@ -3,7 +3,7 @@ self.addEventListener("install", e => {
     e.waitUntil(
         caches.open("static").then(cache => {
             return cache.addAll([
-                "./index.html",
+                "./",
                 "./manifest.json",
                 "./icons/logo192.png"
             ]);
