@@ -91,7 +91,6 @@
         <button onclick="checkGuess()">Raad!</button>
         <div id="result"></div>
         <button onclick="resetGame()">Opnieuw spelen</button>
-        <button id="installBtn" style="display:none; margin-top:10px;">Installeer app</button>
     </div>
     <script>
         let secret = Math.floor(Math.random() * 10) + 1;
@@ -123,24 +122,6 @@
             result.textContent = '';
             result.classList.remove('win-animate');
         }
-
-        // WPA install logic
-        let deferredPrompt;
-        const installBtn = document.getElementById('installBtn');
-        window.addEventListener('beforeinstallprompt', (e) => {
-            e.preventDefault();
-            deferredPrompt = e;
-            installBtn.style.display = 'inline-block';
-        });
-        installBtn.addEventListener('click', () => {
-            if (deferredPrompt) {
-                deferredPrompt.prompt();
-                deferredPrompt.userChoice.then(() => {
-                    deferredPrompt = null;
-                    installBtn.style.display = 'none';
-                });
-            }
-        });
     </script>
 </body>
 </html>
