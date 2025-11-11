@@ -2,7 +2,8 @@
   "name": "Supermarkt Takenplanner",
   "short_name": "Takenplanner",
   "description": "Plan je taken, volg prestaties en genereer barcodes",
-  "start_url": "/",
+  "lang": "nl-NL",
+  "start_url": "/?source=pwa",
   "scope": "/",
   "display": "standalone",
   "orientation": "portrait-primary",
@@ -10,27 +11,46 @@
   "theme_color": "#0b74ff",
   "icons": [
     {
-      "src": "icons/logo192.png",
+      "src": "icons/logo-192.png",
       "sizes": "192x192",
-      "type": "image/svg+xml",
+      "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "icons/logo512.png",
+      "src": "icons/logo-512.png",
       "sizes": "512x512",
-      "type": "image/svg+xml",
+      "type": "image/png",
       "purpose": "any maskable"
+    },
+    {
+      "src": "icons/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Nieuwe taak",
+      "short_name": "Nieuwe taak",
+      "description": "Snel een taak aanmaken",
+      "url": "/tasks/new",
+      "icons": [
+        {
+          "src": "icons/shortcut-new.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
     }
   ],
   "categories": ["productivity"],
   "screenshots": [
     {
-      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 540 720'><rect fill='%23f6f7fb' width='540' height='720'/><rect fill='%230b74ff' width='540' height='80'/><text x='270' y='50' font-size='36' font-weight='bold' text-anchor='middle' fill='white'>Takenplanner</text></svg>",
+      "src": "screenshots/screen-1.png",
       "sizes": "540x720",
-      "type": "image/svg+xml",
+      "type": "image/png",
       "form_factor": "narrow"
     }
   ]
 }
-
-
