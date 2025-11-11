@@ -3,7 +3,7 @@
   "short_name": "Takenplanner",
   "description": "Plan je taken, volg prestaties en genereer barcodes",
   "lang": "nl-NL",
-  "start_url": "/?source=pwa",
+  "start_url": "/index.nl",
   "scope": "/",
   "display": "standalone",
   "orientation": "portrait-primary",
@@ -54,4 +54,5 @@
     }
   ]
 }
+
 
